@@ -10,6 +10,7 @@ namespace FawryEcommerceSystem
     {
         string GetName();
         double GetWeight();
+        // واجهة للمنتجات القابلة للشحن
 
     }
 }

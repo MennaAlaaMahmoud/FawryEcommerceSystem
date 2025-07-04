@@ -8,9 +8,11 @@ namespace FawryEcommerceSystem
 {
     public class Product
     {
-            public string Name { get; }
+        // المنتج
+          public string Name { get; }
             public double Price { get; }
             public int Quantity { get; private set; }
+
 
             public Product(string name, double price, int quantity)
             {

@@ -13,6 +13,7 @@ namespace FawryEcommerceSystem
         {
             double totalWeight = 0;
             Console.WriteLine("*_* Shipment notice *_*");
+            // طباعة تفاصيل الشحن
             foreach (var item in itemsShip)
             {
                 double weight = item.GetWeight();

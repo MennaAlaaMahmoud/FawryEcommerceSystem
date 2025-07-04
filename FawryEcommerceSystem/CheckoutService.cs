@@ -21,6 +21,7 @@ namespace FawryEcommerceSystem
             double shipping = 0;
             var shippables = new List<IShippable>();
 
+            // التحقق من صلاحية المنتجات في السلة
             foreach (var item in cart.GetItems())
             {
                 Product product = item.Key;
@@ -45,7 +46,7 @@ namespace FawryEcommerceSystem
             }
 
             double total = subtotal + shipping;
-
+            // التحقق من رصيد العميل
             if (!customer.DeductBalance(total))
             {
                 Console.WriteLine("Insufficient balance!");
@@ -56,6 +57,7 @@ namespace FawryEcommerceSystem
                 ShippingService.Ship(shippables);
 
             Console.WriteLine("*_* Checkout receipt *_*");
+            // طباعة الإيصال
             foreach (var item in cart.GetItems())
             {
                 Product product = item.Key;
@@ -70,14 +72,18 @@ namespace FawryEcommerceSystem
             Console.WriteLine($"Amount: {total}");
             Console.WriteLine($"Balance after payment: {customer.Balance}");
 
-            string invoiceId = "0001"; 
+           
+            string invoiceId = "0001";
+            // كود الفاتوره 
             string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            // تاريخ الفاتوره
 
             Console.WriteLine();
             Console.WriteLine($" Invoice ID: {invoiceId}");
             Console.WriteLine($" Date: {date}");
 
             Console.WriteLine();
+            // شكرًا لك على التسوق معنا (:
             Console.WriteLine(" Payment successful Thank you for shopping with us (:");
 
         }

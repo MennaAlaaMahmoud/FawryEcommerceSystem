@@ -10,6 +10,7 @@ namespace FawryEcommerceSystem
     {
         private Dictionary<Product, int> items = new Dictionary<Product, int>();
 
+        // إضافة منتج إلى السلة
         public void Add(Product product, int quantity)
         {
             if (quantity > product.Quantity)
@@ -20,6 +21,7 @@ namespace FawryEcommerceSystem
             items[product] = quantity;
         }
 
+        // إزالة منتج من السلة
         public Dictionary<Product, int> GetItems()
         {
             return items;
